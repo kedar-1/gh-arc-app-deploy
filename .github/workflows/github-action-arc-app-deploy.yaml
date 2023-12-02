@@ -33,6 +33,7 @@ env:
   AZURE_CONTAINER_REGISTRY: "azlandemo"
   CONTAINER_NAME: "azure-voting-app"
   RESOURCE_GROUP: "Azlandemo"
+  K8S_RESOURCE_GROUP: "azurearc"
   CLUSTER_NAME: "microk8s"
   IMAGE_PULL_SECRET_NAME: "image-pull-secret-name"
 
@@ -68,7 +69,7 @@ jobs:
           method: service-principal
           cluster-type: arc
           cluster-name: ${{ env.CLUSTER_NAME }}
-          resource-group: ${{ env.RESOURCE_GROUP }}
+          resource-group: ${{ env.K8S_RESOURCE_GROUP }}
           
 
       # Retrieves the credentials for pulling images from your Azure Container Registry
